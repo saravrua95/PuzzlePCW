@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Puzzle it!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+	<link rel="stylesheet" href="css/fontello.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html"><h1> <i class="icon-puzzle"></i>Puzzle It! <i class="icon-puzzle"></i></h1></a>
+        <a href="index.html"><h2>Simply puzzles.</h2></a>
+    </header>
+    <hr>
+
+
+    <div class="juego">
+
+        <div id="modal" class="modal">
+            <div class="contenidoModal">
+                <div class="headerModal">
+                    <h2 id="headerModal">
+                        Has terminado.
+                    </h2>
+                </div>
+                <div class="bodyModal">
+                    <div id="textoModal">
+                        <p>Piezas por colocar: <span id="piezasFinal"> piezas.</span></p>
+                        <p>Movimientos: <span id="movimientosFinal"></span> movimientos.</p>
+                        <p>Tiempo: <span id="tiempoFinal"> </span> segundos.</p>
+                    </div>
+                </div>
+                <div class="footerModal">
+                    <button id="cerrar">Cerrar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalGanador" class="modalGanador">
+            <div class="contenidoModalGanador">
+                <div class="headerModalGanador">
+                    <h2 id="headerModalGanador">
+                        ¡¡ENHORABUENA!!
+                    </h2>
+                </div>
+                <div class="bodyModal">
+                    <div id="textoModalGanador">
+                        <p>Has colocado todas las piezas correctamente!!</p>
+                        <p>En <span id="movimientosFinalGanador"></span> movimientos.</p>
+                        <p>Y en solo <span id="tiempoFinalGanador"></span> segundos!!</p>
+                    </div>
+                </div>
+                <div class="footerModal">
+                    <button id="cerrarGanador">Cerrar</button>
+                </div>
+            </div>
+        </div>
+
+        <section id="seleccionaImagen">
+            <br>
+            <h2>Selecciona una foto</h2>
+            <hr>
+            <canvas id="canvas1"></canvas>
+            <hr>
+            <div class="contenedor">
+                <div class="overlay"></div>
+            </div>          
+            <footer>
+                <input type="file" id="inputFoto" accept="image/*">
+            </footer>
+            <br>
+        </section>
+
+        <section id="puzzle">
+            <br>
+            <h2>Juega!</h2>
+            <hr>
+            <canvas id="canvas2"></canvas>
+            <hr>
+            <footer>
+                <!--Elige un color para las lineas del puzzle-->
+                <label>Elige un color:</label>
+                <input type="color" id="colorLineas" name="color">
+                <br><br>
+                <!--Elige una dificultad-->
+                <label for="dificultad">Elige una dificultad:</label>
+                <select name="dificultad" id="dificultad">
+                    <option value="facil">Facil</option>
+                    <option value="medio">Medio</option>
+                    <option value="dificil">Dificil</option>
+                </select>
+                <br><br>
+                <!--Botones-->
+                <button onclick="jugar()" id="jugar">Juega</button>
+                <button onclick="terminar()" id="fin">Terminar</button>
+                <button onclick = "ayuda()" id="ayuda">Ayuda</button>
+                <br><br>
+                <button onclick="limpiaCanvas()">Limpiar</button>
+            </footer>
+            <br>
+        </section>
+
+
+        <section id = "marcador">
+            <h2>Marcador</h2>
+            <hr>
+            <footer>
+                <p>Piezas desordenadas: <span id="fichasMal"></span></p>
+                <p>Movimientos realizados: <span id="movimientos"></span></p>
+                <p>Tiempo: <span id="reloj"></span></p>                    
+            </footer>
+        </section>
+    </div>
+
+
+    <script>
+        prepararCanvas();
+    </script>
+
+<footer id="footer">
+    <p>2018 Sara Vilaplana Rúa</p>
+    <a href="acerca.html">Más información</a>
+</footer>
+</body>
+
+
+</html>
